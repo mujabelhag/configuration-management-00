@@ -1,0 +1,6 @@
+To run this ansible demonstration :
+
+ansible-playbook nginx-playbook.yml \
+  -i inventory.ini \
+  -c local \ #3 to disable ssh 
+  --ask-become-pass

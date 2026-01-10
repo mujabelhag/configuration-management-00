@@ -1,0 +1,17 @@
+- name: configue nginx server
+  hosts: web
+  become: yes
+
+
+  tasks:
+    - name: install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: confirm nginx is running
+      service: 
+        name: nginx
+        state: started
+        enabled: yes
