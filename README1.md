@@ -58,3 +58,13 @@ and it is .ini format that contains all the resources details
 ansible  <host-group> -i inventory -m <module> -a<arguments>
 ansible all -i inventory.ini -m ping (to test the conectivity)
 ansible all -i inventory.ini -m setup 
+
+
+
+Quizes:
+
+1. What problem does Ansible solve?
+2. What is meant by “agentless” in Ansible?
+3. What is an inventory file and why is it required?
+4. What is a playbook and what format is it written in?
+5. Why is Python required on managed nodes?
