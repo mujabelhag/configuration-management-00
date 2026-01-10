@@ -4,3 +4,9 @@ ansible-playbook nginx-playbook.yml \
   -i inventory.ini \
   -c local \ # to disable ssh 
   --ask-become-pass ## sudo pss
+
+
+  ansible-playbook nginx-playbook.yml \
+  -i inventory.ini \
+  -c local \
+  --ask-become-pass
