@@ -69,12 +69,12 @@ sudo apt install nginx -y
 # declaraive model :
 it is like we just tell the system what we want 
 example:
-- name: install nginx
+  name: install nginx
   hosts: all 
   become: yes 
 
   tasks:
-    - name: install nginx
+      name: install nginx
       apt:
       name: nginx
       state: present
