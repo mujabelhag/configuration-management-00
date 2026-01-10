@@ -56,3 +56,29 @@ configuration management tools helps in :
 - uses inventory files to track the system state
 
 
+# Quick Comparison Between Declarative And Procedural Models :
+
+# procedural model :
+is a step by step instructions 
+example :
+if we want to install nginx in a specific resource / server  we run the following
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt install nginx -y 
+
+# declaraive model :
+it is like we just tell the system what we want 
+example:
+- name: install nginx
+  hosts: all 
+  become: yes 
+
+  tasks:
+    - name: install nginx
+      apt:
+      name: nginx
+      state: present
+
+this how we differentiate between the declarative and procedural approachs
+
+
