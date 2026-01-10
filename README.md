@@ -50,5 +50,9 @@ actuall stats: someone has deleted nginx
 
 Ansible is the most preferable tool because it,s simple and readable in .yml format 
 
+configuration management tools helps in :
+- detect and fix the drift by inforcing a known configurations 
+- apply the changes useing declarave model (all we have to do is just tell the tool what's need to be done ..not step by step procedure)
+- uses inventory files to track the system state
 
 
