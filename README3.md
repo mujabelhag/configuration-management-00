@@ -93,3 +93,14 @@ ignore-errors: yes
   ansible-playbook playbook.yml -v 
   ansible-playbook playbook.yml -vv 
   ansible-playbook playbook.yml -vvv
+
+
+  1. What is the difference between a static inventory file and a dynamic
+inventory, and when would you prefer dynamic inventory?
+2. What is a handler in Ansible, and how is it different from a normal task?
+3. What problem do Ansible roles solve, and name at least three standard
+directories inside a role.
+4. Why is Ansible Vault used, and name one command to encrypt an existing
+variables file.
+5. Explain the purpose of ignore_errors, failed_when, and one module or flag
+commonly used for debugging playbooks.
