@@ -1,0 +1,17 @@
+plugin: amazon.aws.aws-ec2
+regions:
+  - us-east-1
+filters:
+   tag: 
+    role: web 
+   instance-state-name: running
+compose: 
+  ansible-host: public-ip-address
+
+
+# in this dynamic inventory file using plugin to get the instances details
+# whenever we created a new instance with the same specifications (regions, roles) dynamic inventory file is 
+# going to include it in the file 
+
+# to run this file :
+# ansible-playbook -i aws_ec2.yml (the name of the playbook)

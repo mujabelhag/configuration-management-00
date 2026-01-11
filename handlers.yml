@@ -1,0 +1,21 @@
+- name: manage nginx with handler
+  hosts: all
+  become: yes 
+
+  tasks:
+    - name: display nginx configuration
+      templete: 
+         src: /user/asus/mujab/nginx.config.j2
+         dest: /etc/nginx/nginx.config
+         notify: Restart Nginx
+
+      handler:
+        - name: Restart Nginx
+          service:
+          name: nginx
+          state: started
+        
+
+
+  # if the display task is changed and be performed then it wil notify the handler 
+  # and if the display task didn't change that's idempotency then the handler will not be triggerd 

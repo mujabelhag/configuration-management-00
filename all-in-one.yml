@@ -1,0 +1,32 @@
+- name: configuring a server applyying the concepts of (vars,loops,and facts)
+  hosts: all
+  become: yes
+  gather_facts: yes 
+
+  vars:
+    tools:
+      - vim
+      - curl
+      - tree
+
+    web_package: nginx
+
+  tasks:
+    - name: display system architecture
+      debug:
+        msg: "system architecture is {{ansible_facts['architecture']}}"
+
+    - name: install web server (debian)
+      apt: 
+        name: "{{web-package}}"
+        state: present
+        update_cache: yes 
+
+      when: ansible_facts ['os_family']=="Debian" # only run the task for the os that acept apt (debian)
+
+    - name: install some tools
+      apt: 
+        name: "{{item}}"
+        state: present
+
+      loop: "{{tools}}"
